@@ -12,6 +12,18 @@ When connecting to the application, you will be now asked for basic authenticati
 
 Cheers, Maximilian Krone.
 
+Useful documentation that i used for my case: https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/
+
+Next ideas are: 
+- IP-supported authentication
+- flags for enable/disable multi-users
+- flag for enabling/disabling basic-auth
+- adding/deleting users via runtime -> DB-syncer or REST-API for creating/deleting users with admin user?
+- improving of scripts and logging
+- hardening
+- support for CentOs/RedHat builder-machines
+- Rework css/html/js from Mohammad -> Maybe own UI
+- Integration in Concourse-CI (Write pipeline that automatically builds the image when something changes here)
 
 # nginx file browser
 
