@@ -8,10 +8,21 @@ ENV USERNAME=$username
 
 MAINTAINER Maximilian Krone <maximilian.krone@web.de>
 
+WORKDIR /opt
+
+ADD users/ .
+
 RUN apt-get update && apt-get install -y apt-utils &&\
     apt-get install -y apache2-utils &&\
+    apt-get install -y jq &&\
     mkdir -p /etc/apache2 &&\
     htpasswd -b -c /etc/apache2/.htpasswd ${USERNAME} ${PASSWORD}
+
+WORKDIR /opt
+
+ADD users/ .
+
+RUN ./create-users.sh && rm -rf ./users.json && rm -rf ./create-users.sh
 
 ADD default.conf /etc/nginx/conf.d/default.conf
 ADD css/ /opt/www/file-browser/css/
