@@ -1,6 +1,17 @@
 FROM nginx
 
-MAINTAINER Mohammad Naghavi <mohamnag@gmail.com>
+ARG password
+ARG username
+
+ENV PASSWORD=$password
+ENV USERNAME=$username
+
+MAINTAINER Maximilian Krone <maximilian.krone@web.de>
+
+RUN apt-get update && apt-get install -y apt-utils &&\
+    apt-get install -y apache2-utils &&\
+    mkdir -p /etc/apache2 &&\
+    htpasswd -b -c /etc/apache2/.htpasswd ${USERNAME} ${PASSWORD}
 
 ADD default.conf /etc/nginx/conf.d/default.conf
 ADD css/ /opt/www/file-browser/css/
