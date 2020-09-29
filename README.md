@@ -2,9 +2,13 @@
 
 This is a fork of the nginx-file-browser provided by Mohammad Naghavi and adds a few useful things to the nginx-container such as a build-script and default basic-authentication for the resources, so you can access the files only via login.
 
-To build the image, you just need to edit the two config-files user.conf and image.conf. Afterwards you can execute the build.sh script which will source those configs and use them to build the image with the provided values.
+To build the image, you just need to edit the two config-files user.conf and image.conf. To support multiple users, you just need to add all your users to the users/users.json file in the given format. Be aware, that those users incl. password will always be included, so you need to change those values aswell or delete the users from the users-json file.
+
+Afterwards you can execute the build.sh script which will source those configs and use them to build the image with the provided values.
 
 Afterwards you will be able to run this image like Mohammad will show you later in this Readme.
+
+When connecting to the application, you will be now asked for basic authentication.
 
 Cheers, Maximilian Krone.
 
