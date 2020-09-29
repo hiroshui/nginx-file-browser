@@ -1,3 +1,14 @@
+
+
+This is a fork of the nginx-file-browser provided by Mohammad Naghavi and adds a few useful things to the nginx-container such as a build-script and default basic-authentication for the resources, so you can access the files only via login.
+
+To build the image, you just need to edit the two config-files user.conf and image.conf. Afterwards you can execute the build.sh script which will source those configs and use them to build the image with the provided values.
+
+Afterwards you will be able to run this image like Mohammad will show you later in this Readme.
+
+Cheers, Maximilian Krone.
+
+
 # nginx file browser
 
 This web application is a very simple file browser which can be used
